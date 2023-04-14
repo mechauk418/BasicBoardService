@@ -21,10 +21,10 @@ class User_ViewSet(viewsets.ModelViewSet):
     serializer_class = UserSerializer
 
 
-BASE_URL = "http://localhost:8000/"
+BASE_URL = "http://basicboardservicebeanstalk-env.eba-ctjwe5vz.ap-northeast-2.elasticbeanstalk.com/"
 
 
-KAKAO_CALLBACK_URI = "http://localhost:8080/login"  # 프론트 로그인 URI 입력
+KAKAO_CALLBACK_URI = "https://basic-board-service-front.vercel.app/login"  # 프론트 로그인 URI 입력
 
 
 @api_view(["GET"])
@@ -128,10 +128,10 @@ def kakao_callback(request):
 class KakaoLogin(SocialLoginView):
     adapter_class = kakao_view.KakaoOAuth2Adapter
     client_class = OAuth2Client
-    callback_url = "http://localhost:8080/login" 
+    callback_url = "https://basic-board-service-front.vercel.app/login" 
 
 
-GOOGLE_CALLBACK_URI = "http://localhost:8080/login"  # 프론트 로그인 URI 입력
+GOOGLE_CALLBACK_URI = "https://basic-board-service-front.vercel.app/login"  # 프론트 로그인 URI 입력
 
 
 @api_view(["GET", "POST"])
