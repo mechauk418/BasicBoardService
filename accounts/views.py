@@ -21,7 +21,7 @@ class User_ViewSet(viewsets.ModelViewSet):
     serializer_class = UserSerializer
 
 
-BASE_URL = "http://basicboardservicebeanstalk-env.eba-ctjwe5vz.ap-northeast-2.elasticbeanstalk.com/"
+BASE_URL = "https://www.rollthun.site/"
 
 
 KAKAO_CALLBACK_URI = "https://basic-board-service-front.vercel.app/login"  # 프론트 로그인 URI 입력
