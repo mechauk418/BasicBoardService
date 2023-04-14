@@ -245,7 +245,7 @@ SIMPLE_JWT = {
 # MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 
-DEBUG = os.getenv("DEBUG") == 'True'
+DEBUG = os.getenv("DEBUG")
 
 if DEBUG == True: 
     MEDIA_URL = '/media/'
