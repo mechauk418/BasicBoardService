@@ -93,6 +93,7 @@ CORS_ALLOW_HEADERS = [ # 허용할 헤더
     'Cookie',
     'Set-Cookie'
 ]
+
 CORS_ALLOW_CREDENTIALS = True
 
 CORS_ALLOWED_ORIGINS = [
@@ -110,6 +111,7 @@ CORS_ALLOWED_ORIGINS = [
 CSRF_TRUSTED_ORIGINS = [
     'http://localhost:8080',
     'https://basic-board-service-front.vercel.app',
+    "https://www.rollthun.site",
 ]
 
 CSRF_COOKIE_SAMESITE='Lax'
@@ -225,9 +227,10 @@ REST_AUTH = {
     'JWT_AUTH_COOKIE' : 'access',
     'JWT_AUTH_HTTPONLY': True,
     'JWT_AUTH_REFRESH_COOKIE' : "refresh_token",
-    'JWT_AUTH_SAMESITE': 'Lax',
+    'JWT_AUTH_SAMESITE': 'None',
     'JWT_AUTH_COOKIE_USE_CSRF' : False,
-    'SESSION_LOGIN' : False
+    'SESSION_LOGIN' : False,
+    'JWT_AUTH_SECURE': True
 }
 
 ACCOUNT_UNIQUE_EMAIL = True
