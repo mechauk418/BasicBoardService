@@ -121,7 +121,7 @@ def kakao_callback(request):
 
         accept_json.pop("user", None)
         response_cookie = JsonResponse(accept_json)
-        response_cookie.set_cookie('refresh_token', refresh_token, max_age=cookie_max_age, httponly=True, samesite='Lax')
+        response_cookie.set_cookie('refresh_token', refresh_token, max_age=cookie_max_age, httponly=True, samesite='None', secure=True)
         return response_cookie
 
 
