@@ -91,21 +91,23 @@ CORS_ALLOW_HEADERS = [ # 허용할 헤더
     "x-csrftoken",
     "x-requested-with",
     'Cookie',
-    'Set-Cookie'
+    'Set-Cookie',
+    'set-cookie'
 ]
 
 CORS_ALLOW_CREDENTIALS = True
+CORS_ORIGIN_ALLOW_ALL = True
 
-CORS_ALLOWED_ORIGINS = [
-    "https://example.com",
-    "https://sub.example.com",
-    "http://localhost:8080",
-    "http://127.0.0.1:9000",
-    "http://127.0.0.1:8080",
-    "http://localhost:8000",
-    'https://basic-board-service-front.vercel.app',
-    "https://www.rollthun.site",
-]
+# CORS_ALLOWED_ORIGINS = [
+#     "https://example.com",
+#     "https://sub.example.com",
+#     "http://localhost:8080",
+#     "http://127.0.0.1:9000",
+#     "http://127.0.0.1:8080",
+#     "http://localhost:8000",
+#     'https://basic-board-service-front.vercel.app',
+#     "https://www.rollthun.site",
+# ]
 
 
 CSRF_TRUSTED_ORIGINS = [
@@ -116,7 +118,6 @@ CSRF_TRUSTED_ORIGINS = [
 
 CSRF_COOKIE_SAMESITE='Lax'
 CSRF_COOKIE_HTTPONLY =True
-
 
 
 TEMPLATES = [
