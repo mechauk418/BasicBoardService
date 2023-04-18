@@ -100,7 +100,7 @@ def kakao_callback(request):
 
         accept_json.pop("user", None)
         response_cookie = JsonResponse(accept_json)
-        response_cookie.set_cookie('refresh_token', refresh_token, max_age=cookie_max_age, httponly=True, samesite='None', secure=True, domain='https://basic-board-service-front.vercel.app')
+        response_cookie.set_cookie('refresh_token', refresh_token, max_age=cookie_max_age, httponly=True, samesite='None', secure=True)
         return response_cookie
     
     except User.DoesNotExist:
@@ -121,7 +121,7 @@ def kakao_callback(request):
 
         accept_json.pop("user", None)
         response_cookie = JsonResponse(accept_json)
-        response_cookie.set_cookie('refresh_token', refresh_token, max_age=cookie_max_age, httponly=True, samesite='None', secure=True, domain='https://basic-board-service-front.vercel.app')
+        response_cookie.set_cookie('refresh_token', refresh_token, max_age=cookie_max_age, httponly=True, samesite='None', secure=True)
         return response_cookie
 
 
@@ -203,7 +203,7 @@ def google_callback(request):
 
         accept_json.pop("user", None)
         response_cookie = JsonResponse(accept_json)
-        response_cookie.set_cookie('refresh_token', refresh_token, max_age=cookie_max_age, httponly=True, samesite='None', secure=True, domain='https://basic-board-service-front.vercel.app')
+        response_cookie.set_cookie('refresh_token', refresh_token, max_age=cookie_max_age, httponly=True, samesite='None', secure=True)
         return response_cookie
     
     
@@ -223,7 +223,7 @@ def google_callback(request):
 
         accept_json.pop("user", None)
         response_cookie = JsonResponse(accept_json)
-        response_cookie.set_cookie('refresh_token', refresh_token, max_age=cookie_max_age, httponly=True, samesite='None', secure=True, domain='https://basic-board-service-front.vercel.app')
+        response_cookie.set_cookie('refresh_token', refresh_token, max_age=cookie_max_age, httponly=True, samesite='None', secure=True)
         return response_cookie
 
 
