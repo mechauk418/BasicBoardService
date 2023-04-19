@@ -38,6 +38,7 @@ class ArticleSerializer(serializers.ModelSerializer):
     userpk = serializers.ReadOnlyField(source="user.pk")
     comments = CommentSerializer(many=True, read_only=True)
     like_article = LikeSerializer(many=True, read_only=True)
+    like_count = like_article.count()
 
     class Meta:
         model = Article
@@ -51,6 +52,7 @@ class ArticleSerializer(serializers.ModelSerializer):
             "like_article",
             'created_at',
             'hits',
+            'like_count'
         ]
 
     
