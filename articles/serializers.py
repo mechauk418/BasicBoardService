@@ -72,7 +72,8 @@ class PostSerializer(serializers.ModelSerializer):
     userpk = serializers.ReadOnlyField(source="user.pk")
     comments = CommentSerializer(many=True, read_only=True)
     like_article = LikeSerializer(many=True, read_only=True)
-    
+    like_count = serializers.IntegerField(source="like_article.count", read_only=True)
+
 	#게시글에 등록된 이미지들 가지고 오기
     def get_images(self, obj):
         image = obj.image.all()
@@ -91,6 +92,7 @@ class PostSerializer(serializers.ModelSerializer):
             'created_at',
             'hits',
             'images',
+            'like_count',
         ]
 
     def create(self, validated_data):
