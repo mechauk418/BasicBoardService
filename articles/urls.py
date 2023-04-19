@@ -17,8 +17,5 @@ urlpatterns = [
             {"put": "update", "patch": "partial_update", "delete": "destroy"}
         ),
     ),
-    path(
-        "<int:pk>/like/",
-        LikeCreate.as_view(),
-    ),
+    path("<int:pk>/like/",LikeCreate.as_view(),),
 ]

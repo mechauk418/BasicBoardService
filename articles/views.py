@@ -55,7 +55,7 @@ class Article_ViewSet(viewsets.ModelViewSet):
                 response.set_cookie('hit', cookies+f'|{pk}', expires=expires) # 쿠키 생성
                 instance.hits += 1
                 instance.save()
-                    
+
         else: # 쿠키에 hit 값이 없을 경우(즉 현재 보는 게시글이 첫 게시글임)
             response.set_cookie('hit', pk, expires=expires)
             instance.hits += 1
@@ -81,17 +81,17 @@ class LikeCreate(generics.ListCreateAPIView, mixins.DestroyModelMixin):
     serializer_class = LikeSerializer
 
     def get_queryset(self):
-        article = Article.objects.get(pk=self.kwargs.get("article_pk"))
+        article = Article.objects.get(pk=self.kwargs.get("pk"))
         return Like.objects.filter(article=article)
 
     def perform_create(self, serializer):
-        article = Article.objects.get(pk=self.kwargs.get("article_pk"))
+        article = Article.objects.get(pk=self.kwargs.get("pk"))
         like = Like.objects.filter(user=self.request.user, article = article)
         if like.exists():
             like.delete()
             return Response(status=status.HTTP_204_NO_CONTENT)
         serializer.save(
             user=self.request.user,
-            article=Article.objects.get(pk=self.kwargs.get("article_pk")),
+            article=Article.objects.get(pk=self.kwargs.get("pk")),
         )
 
