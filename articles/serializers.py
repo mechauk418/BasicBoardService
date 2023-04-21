@@ -5,7 +5,7 @@ class CommentSerializer(serializers.ModelSerializer):
 
     user = serializers.ReadOnlyField(source="user.email")
     userpk = serializers.ReadOnlyField(source="user.pk")
-    article = serializers.ReadOnlyField(source="articles.pk")
+    article = serializers.ReadOnlyField(source="article.pk")
 
     class Meta:
         model = Comment
@@ -22,7 +22,7 @@ class CommentSerializer(serializers.ModelSerializer):
 class LikeSerializer(serializers.ModelSerializer):
 
     user = serializers.ReadOnlyField(source="user.email")
-    article = serializers.ReadOnlyField(source="articles.pk")
+    article = serializers.ReadOnlyField(source="article.pk")
 
     class Meta:
         model = Like
