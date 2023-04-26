@@ -14,7 +14,7 @@ urlpatterns = [
     path(
         "<int:pk>/comment/<int:comment_pk>/",
         Comment_ViewSet.as_view(
-            {"put": "update", "patch": "partial_update", "delete": "destroy"}
+            {"put": "update", "patch": "partial_update", "delete": "destroy", "get": 'retrieve'}
         ),
     ),
     path("<int:pk>/like/",LikeCreate.as_view(),),
