@@ -77,6 +77,13 @@ class Comment_ViewSet(viewsets.ModelViewSet):
             article=Article.objects.get(pk=self.kwargs.get("pk")),
         )
 
+    def retrieve(self, request, pk=None):
+        queryset = Comment.objects.all()
+        comment = get_object_or_404(queryset,pk=pk)
+        serializer = CommentSerializer(comment)
+        return Response(serializer.data)
+
+
 class LikeCreate(generics.ListCreateAPIView, mixins.DestroyModelMixin):
     serializer_class = LikeSerializer
 
